@@ -24,7 +24,7 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 
 ## News
-**2020/9/23 Thank you for your attention. We are expected to release our models at the end of October (est.). In the meantime, the issue section will be closed.** 
+**2020/9/23 Thank you for your attention and support. We are expected to release our models at the end of October (est.). In the meantime, the issue section will be closed.** 
 
 2020/9/15 Our paper ["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922) is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.
 
