@@ -9,7 +9,7 @@
     </a>
 </p>
 
-This repository contains the resources in our paper "**Revisiting Pre-trained Models for Chinese Natural Language Processing**" which will be published in "[Findings of EMNLP](https://2020.emnlp.org)". We are still finalizing our camera-ready paper. Meanwhile, you can read our pre-print version in April 2020.
+This repository contains the resources in our paper "**Revisiting Pre-trained Models for Chinese Natural Language Processing**", which will be published in "[Findings of EMNLP](https://2020.emnlp.org)". We are still finalizing our camera-ready paper. Meanwhile, you can read our pre-print version in April 2020.
 
 **[Revisiting Pre-trained Models for Chinese Natural Language Processing](https://arxiv.org/abs/2004.13922)**  
 *Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Shijin Wang, Guoping Hu*
@@ -24,9 +24,9 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 
 ## News
-**2020/9/23 Thank you for your attention and support. We are expected to release our models at the end of October (est.). In the meantime, the issue section will be closed.** 
+**[Sep 23, 2020] Thank you for your attention and support. We are expected to release our models at the end of October (est.). In the meantime, the issue section will be closed.** 
 
-2020/9/15 Our paper ["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922) is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.
+[Sep 15, 2020] Our paper ["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922) is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.
 
 
 ## Guide
@@ -59,7 +59,7 @@ TBA
 TBA
 
 ## Citation
-If you find our resource or paper is useful, please consider include the following citation in your paper.
+If you find our resource or paper is useful, please consider including the following citation in your paper.
 - https://arxiv.org/abs/2004.13922
 ```
 @inproceedings{cui-etal-2020-revisiting,
@@ -72,12 +72,13 @@ If you find our resource or paper is useful, please consider include the followi
 ```
 
 ## Acknowledgement
-The first author would like to thank  [Google TensorFlow Research Cloud (TFRC) Program](https://www.tensorflow.org/tfrc).
+The first author would like to thank [Google TensorFlow Research Cloud (TFRC) Program](https://www.tensorflow.org/tfrc).
 
 ## Issues
-- **You are advised to read the following FAQ first before you submit an issue.** 
+Before you submit an issue:
+
+- **You are advised to read [FAQ](#FAQ) first before you submit an issue.** 
 - Repetitive and irrelevant issues will be ignored and closed by [stable-bot](stale · GitHub Marketplace). Thank you for your understanding and support.
 - We cannot acommodate EVERY request, and thus please bare in mind that there is no guarantee that your request will be met.
 - Always be polite when you submit an issue.
 
-If none of the above works, please submit a GitHub Issue.
