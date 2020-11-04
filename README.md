@@ -8,6 +8,7 @@
         <img alt="GitHub" src="https://img.shields.io/github/license/ymcui/MacBERT.svg?color=blue&style=flat-square">
     </a>
 </p>
+
 This repository contains the resources in our paper **"Revisiting Pre-trained Models for Chinese Natural Language Processing"**, which will be published in "[Findings of EMNLP](https://2020.emnlp.org)". You can read our camera-ready paper through [ACL Anthology](#) or [arXiv pre-print](https://arxiv.org/abs/2004.13922).
 
 
