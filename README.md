@@ -8,7 +8,8 @@
         <img alt="GitHub" src="https://img.shields.io/github/license/ymcui/MacBERT.svg?color=blue&style=flat-square">
     </a>
 </p>
-This repository contains the resources in our paper "**Revisiting Pre-trained Models for Chinese Natural Language Processing**", which will be published in "[Findings of EMNLP](https://2020.emnlp.org)". You can read our camera-ready paper through [ACL Anthology]() or [arXiv pre-print](https://arxiv.org/abs/2004.13922).
+This repository contains the resources in our paper **"Revisiting Pre-trained Models for Chinese Natural Language Processing"**, which will be published in "[Findings of EMNLP](https://2020.emnlp.org)". You can read our camera-ready paper through [ACL Anthology](#) or [arXiv pre-print](https://arxiv.org/abs/2004.13922).
+
 
 **[Revisiting Pre-trained Models for Chinese Natural Language Processing](https://arxiv.org/abs/2004.13922)**  
 *Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Shijin Wang, Guoping Hu*
@@ -92,7 +93,7 @@ With [Huggingface-Transformers](https://github.com/huggingface/transformers), th
 tokenizer = BertTokenizer.from_pretrained("MODEL_NAME")
 model = BertModel.from_pretrained("MODEL_NAME")
 ```
-**Notice: Please use BertTokenizer and BertModel for loading MacBERT models. **
+**Notice: Please use BertTokenizer and BertModel for loading MacBERT models.  **
 
 The actual model and its `MODEL_NAME` are listed below.
 
@@ -141,7 +142,7 @@ To ensure the stability of the results, we run 10 times for each experiment and 
 | **MacBERT-base** | 89.4 (89.2) / 94.3 (94.1) | 89.5 (88.7) / 93.8 (93.5) | 102M |
 | ELECTRA-large         |        88.8 (88.7) / 93.3 (93.2)        |        88.8 (88.2) / 93.6 (93.2)        |  324M   |
 | RoBERTa-wwm-ext-large | 89.6 (89.1) / 94.8 (94.4) | 89.6 (88.9) / 94.5 (94.1) |324M|
-| **MacBERT-large** | 91.2 (90.8) / 95.6 (95.3) | 91.7 (90.9) / 95.6 (95.3) |324M|
+| **MacBERT-large** | 91.2 (90.8) / 95.6 (95.3) | 91.7 (90.9) / 95.6 (95.3) |324M|
 
 
 ### XNLI
