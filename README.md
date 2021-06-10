@@ -9,7 +9,7 @@
     </a>
 </p>
 
-This repository contains the resources in our paper **"Revisiting Pre-trained Models for Chinese Natural Language Processing"**, which will be published in "[Findings of EMNLP](https://2020.emnlp.org)". You can read our camera-ready paper through [ACL Anthology](#) or [arXiv pre-print](https://arxiv.org/abs/2004.13922).
+This repository contains the resources in our paper **"Revisiting Pre-trained Models for Chinese Natural Language Processing"**, which will be published in "[Findings of EMNLP](https://2020.emnlp.org)". You can read our camera-ready paper through [ACL Anthology](https://www.aclweb.org/anthology/2020.findings-emnlp.58/) or [arXiv pre-print](https://arxiv.org/abs/2004.13922).
 
 
 **[Revisiting Pre-trained Models for Chinese Natural Language Processing](https://arxiv.org/abs/2004.13922)**  
@@ -231,7 +231,6 @@ A5: Currently, we have no plans on this.
 
 ## Citation
 If you find our resource or paper is useful, please consider including the following citation in your paper.
-- https://arxiv.org/abs/2004.13922
 ```
 @inproceedings{cui-etal-2020-revisiting,
     title = "Revisiting Pre-Trained Models for {C}hinese Natural Language Processing",
