@@ -25,6 +25,8 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 
 ## News
+**2021/7/21 由哈工大SCIR多位学者撰写的[《自然语言处理：基于预训练模型的方法》](https://item.jd.com/13344628.html)已出版，欢迎大家选购，也可参与我们的[赠书活动](https://mp.weixin.qq.com/s/gqtVQmC_UNfeEoHtf-1O3A)。**
+
 **[Nov 3, 2020] Pre-trained MacBERT models are available through direct [Download](#Download) or [Quick Load](#Quick-Load). Use it as if you are using original BERT (except for it cannot perform the original MLM).**
 
 [Sep 15, 2020] Our paper ["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922) is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.
