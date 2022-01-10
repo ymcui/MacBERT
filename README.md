@@ -79,10 +79,10 @@ We mainly provide pre-trained MacBERT models in TensorFlow 1.x.
 * **`MacBERT-large, Chinese`**: 24-layer, 1024-hidden, 16-heads, 324M parameters   
 * **`MacBERT-base, Chinese`**：12-layer, 768-hidden, 12-heads, 102M parameters   
 
-| Model                                |                         Google Drive                         |                        iFLYTEK Cloud                         | Size |
+| Model                                |                         Google Drive                         |                        Baidu Disk                        | Size |
 | :----------------------------------- | :----------------------------------------------------------: | :----------------------------------------------------------: | :--: |
-| **`MacBERT-large, Chinese`**    | [TensorFlow](https://drive.google.com/file/d/1lWYxnk1EqTA2Q20_IShxBrCPc5VSDCkT/view?usp=sharing) | [TensorFlow（pw:3Yg3）](http://pan.iflytek.com:80/link/805D743F3826EC4F4EB5C774D34432AE) | 1.2G |
-| **`MacBERT-base, Chinese`**     | [TensorFlow](https://drive.google.com/file/d/1aV69OhYzIwj_hn-kO1RiBa-m8QAusQ5b/view?usp=sharing) | [TensorFlow（pw:E2cP）](http://pan.iflytek.com:80/link/CF2A1F9AEBF859650E8956854A994C1B) | 383M |
+| **`MacBERT-large, Chinese`**    | [TensorFlow](https://drive.google.com/file/d/1lWYxnk1EqTA2Q20_IShxBrCPc5VSDCkT/view?usp=sharing) | [TensorFlow（pw:zejf）](https://pan.baidu.com/s/1nJEjhUAnWGO_1RPki21mxA?pwd=zejf) | 1.2G |
+| **`MacBERT-base, Chinese`**     | [TensorFlow](https://drive.google.com/file/d/1aV69OhYzIwj_hn-kO1RiBa-m8QAusQ5b/view?usp=sharing) | [TensorFlow（pw:61ga）](https://pan.baidu.com/s/1EAs2fmraqtvfia5Q5rXnuQ?pwd=61ga) | 383M |
 
 ### PyTorch/TensorFlow2 Version
 
