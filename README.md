@@ -12,25 +12,24 @@
 This repository contains the resources in our paper **"Revisiting Pre-trained Models for Chinese Natural Language Processing"**, which will be published in "[Findings of EMNLP](https://2020.emnlp.org)". You can read our camera-ready paper through [ACL Anthology](https://www.aclweb.org/anthology/2020.findings-emnlp.58/) or [arXiv pre-print](https://arxiv.org/abs/2004.13922).
 
 
-**[Revisiting Pre-trained Models for Chinese Natural Language Processing](https://arxiv.org/abs/2004.13922)**  
-*Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Shijin Wang, Guoping Hu*
+- **[Revisiting Pre-trained Models for Chinese Natural Language Processing](https://www.aclweb.org/anthology/2020.findings-emnlp.58)**  
+- *Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Shijin Wang, Guoping Hu*
+- Published in *Findings of EMNLP 2020*
 
+----
 
-For resources other than MacBERT, please visit the following repositories:
-- Chinese BERT-wwm series: https://github.com/ymcui/Chinese-BERT-wwm
-- Chinese ELECTRA: https://github.com/ymcui/Chinese-ELECTRA
-- Chinese XLNet: https://github.com/ymcui/Chinese-XLNet
-- Knowledge Distillation Toolkit - TextBrewer: https://github.com/airaria/TextBrewer
-- Model Pruning Toolkit - TextPruner: https://github.com/airaria/TextPruner
+[Chinese MacBERT](https://github.com/ymcui/MacBERT) | [Chinese ELECTRA](https://github.com/ymcui/Chinese-ELECTRA) | [Chinese XLNet](https://github.com/ymcui/Chinese-XLNet) | [Chinese BERT](https://github.com/ymcui/Chinese-BERT-wwm) | [TextBrewer](https://github.com/airaria/TextBrewer) | [TextPruner](https://github.com/airaria/TextPruner)
 
 More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 ## News
-**2021/12/17 We release a model pruning toolkit - TextPruner, check https://github.com/airaria/TextPruner**
+**[Mar 30, 2022] We release a new pre-trained model called PERT, check https://github.com/ymcui/PERT**
 
-2021/10/24 We propose the first pre-trained language model that specifically focusing on Chinese minority languages. Check：https://github.com/ymcui/Chinese-Minority-PLM
+[Dec 17, 2021] We release a model pruning toolkit - TextPruner, check https://github.com/airaria/TextPruner
 
-2021/7/21 由哈工大SCIR多位学者撰写的[《自然语言处理：基于预训练模型的方法》](https://item.jd.com/13344628.html)已出版，欢迎大家选购，也可参与我们的[赠书活动](https://mp.weixin.qq.com/s/gqtVQmC_UNfeEoHtf-1O3A)。
+[Oct 24, 2021] We propose the first pre-trained language model that specifically focusing on Chinese minority languages. Check：https://github.com/ymcui/Chinese-Minority-PLM
+
+[Jul 21, 2021] Our book ["Natural Language Processing: A Pre-trained Model Approach"](https://item.jd.com/13344628.html) has been published.
 
 [Nov 3, 2020] Pre-trained MacBERT models are available through direct [Download](#Download) or [Quick Load](#Quick-Load). Use it as if you are using original BERT (except for it cannot perform the original MLM).
 
