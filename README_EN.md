@@ -10,7 +10,7 @@
         <img alt="GitHub" src="https://img.shields.io/github/license/ymcui/MacBERT.svg?color=blue&style=flat-square">
     </a>
 </p>
-本目录包含论文**"Revisiting Pre-trained Models for Chinese Natural Language Processing"**（发表于[Findings of EMNLP 2020](https://2020.emnlp.org)）相关资源，即**MacBERT预训练模型**。
+This repository contains the resources in our paper **"Revisiting Pre-trained Models for Chinese Natural Language Processing"**, which is published in "[Findings of EMNLP](https://2020.emnlp.org)". You can read our camera-ready paper through [ACL Anthology](https://www.aclweb.org/anthology/2020.findings-emnlp.58/) or [arXiv pre-print](https://arxiv.org/abs/2004.13922).
 
 
 - **[Revisiting Pre-trained Models for Chinese Natural Language Processing](https://www.aclweb.org/anthology/2020.findings-emnlp.58)**  
@@ -19,112 +19,110 @@
 
 ----
 
-[中文MacBERT](https://github.com/ymcui/MacBERT) | [中文ELECTRA](https://github.com/ymcui/Chinese-ELECTRA) | [中文XLNet](https://github.com/ymcui/Chinese-XLNet) | [知识蒸馏工具TextBrewer](https://github.com/airaria/TextBrewer) | [模型裁剪工具TextPruner](https://github.com/airaria/TextPruner)
+[Chinese MacBERT](https://github.com/ymcui/MacBERT) | [Chinese ELECTRA](https://github.com/ymcui/Chinese-ELECTRA) | [Chinese XLNet](https://github.com/ymcui/Chinese-XLNet) | [Chinese BERT](https://github.com/ymcui/Chinese-BERT-wwm) | [TextBrewer](https://github.com/airaria/TextBrewer) | [TextPruner](https://github.com/airaria/TextPruner)
 
-更多HFL发布的资源：https://github.com/ymcui/HFL-Anthology
+More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 ## News
-**2022/3/30 发布了新的预训练模型PERT：https://github.com/ymcui/PERT** 
+**[Mar 30, 2022] We release a new pre-trained model called PERT, check https://github.com/ymcui/PERT**
 
-2021/12/17 发布了模型裁剪工具TextPruner：https://github.com/airaria/TextPruner
+[Dec 17, 2021] We release a model pruning toolkit - TextPruner, check https://github.com/airaria/TextPruner
 
-2021/10/24 发布了首个面向少数民族语言的预训练模型CINO：https://github.com/ymcui/Chinese-Minority-PLM
+[Oct 24, 2021] We propose the first pre-trained language model that specifically focusing on Chinese minority languages. Check：https://github.com/ymcui/Chinese-Minority-PLM
 
-2021/7/21  ["自然语言处理：基于预训练模型的方法"](https://item.jd.com/13344628.html) 一书正式出版。
+[Jul 21, 2021] Our book ["Natural Language Processing: A Pre-trained Model Approach"](https://item.jd.com/13344628.html) has been published.
 
-2020/11/3 预训练好的中文MacBERT已发布，使用方法与BERT一致。
+[Nov 3, 2020] Pre-trained MacBERT models are available through direct [Download](#Download) or [Quick Load](#Quick-Load). Use it as if you are using original BERT (except for it cannot perform the original MLM).
 
-2020/9/15 论文["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922) 被[Findings of EMNLP](https://2020.emnlp.org) 录用为长文。
+[Sep 15, 2020] Our paper ["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922) is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.
 
 
-## 目录
-| 章节 | 描述 |
+## Guide
+| Section | Description |
 |-|-|
-| [简介](#简介) | 简要介绍MacBERT |
-| [下载](#下载) | 下载MacBERT |
-| [快速加载](#快速加载) | 介绍如何使用 [🤗Transformers](https://github.com/huggingface/transformers) 快速加载模型 |
-| [基线效果](#基线效果) | 在中文NLP任务上的效果 |
-| [FAQ](#FAQ) | 常见问题 |
-| [引用](#引用) | 文章引用信息 |
+| [Introduction](#Introduction) | Introduction to MacBERT |
+| [Download](#Download) | Download links for MacBERT |
+| [Quick Load](#Quick-Load) | Learn how to quickly load our models through [🤗Transformers](https://github.com/huggingface/transformers) |
+| [Results](#Results) | Results on several Chinese NLP datasets |
+| [FAQ](#FAQ) | Frequently Asked Questions |
+| [Citation](#Citation) | Citation |
 
 
-## 简介
-**MacBERT** 是BERT的改进版本，引入了纠错型掩码语言模型（MLM as correction，Mac）预训练任务，缓解了“预训练-下游任务”不一致的问题。
+## Introduction
+**MacBERT** is an improved BERT with novel **M**LM **a**s **c**orrection pre-training task, which mitigates the discrepancy of pre-training and fine-tuning.
 
-掩码语言模型（MLM）中，引入了[MASK]标记进行掩码，但[MASK]标记并不会出现在下游任务中。在MacBERT中，**我们使用相似词来取代[MASK]标记**。相似词通过[Synonyms toolkit (Wang and Hu, 2017)](https://github.com/chatopera/Synonyms)工具获取，算法基于word2vec (Mikolov et al., 2013)相似度计算。同时我们也引入了Whole Word Masking（wwm）和N-gram masking技术。当要对N-gram进行掩码时，我们会对N-gram里的每个词分别查找相似词。当没有相似词可替换时，我们将使用随机词进行替换。
+Instead of masking with [MASK] token, which never appears in the ﬁne-tuning stage, **we propose to use similar words for the masking purpose**. A similar word is obtained by using [Synonyms toolkit (Wang and Hu, 2017)](https://github.com/chatopera/Synonyms), which is based on word2vec (Mikolov et al., 2013) similarity calculations. If an N-gram is selected to mask, we will ﬁnd similar words individually. In rare cases, when there is no similar word, we will degrade to use random word replacement.
 
-以下是训练样本示例。
-
-|  | 例子       |
+Here is an example of our pre-training task.
+|  | Example       |
 | -------------- | ----------------- |
-| **原始句子** | we use a language model to predict the probability of the next word. |
+| **Original Sentence**  | we use a language model to predict the probability of the next word. |
 |  **MLM** | we use a language [M] to [M] ##di ##ct the pro [M] ##bility of the next word . |
 | **Whole word masking**   | we use a language [M] to [M] [M] [M] the [M] [M] [M] of the next word . |
 | **N-gram masking** | we use a [M] [M] to [M] [M] [M] the [M] [M] [M] [M] [M] next word . |
 | **MLM as correction** | we use a text system to ca ##lc ##ulate the po ##si ##bility of the next word . |
 
-**MacBERT的主要框架与BERT完全一致，可在不修改现有代码的基础上进行无缝过渡。**
+Except for the new pre-training task, we also incorporate the following techniques.
 
-更多细节请参考我们的论文：**[Revisiting Pre-trained Models for Chinese Natural Language Processing](https://www.aclweb.org/anthology/2020.findings-emnlp.58)**  
+- Whole Word Masking (WWM)
+- N-gram masking
+- Sentence-Order Prediction (SOP)
+
+**Note that our MacBERT can be directly replaced with the original BERT as there is no differences in the main neural architecture.**
+
+For more technical details, please check our paper: [Revisiting Pre-trained Models for Chinese Natural Language Processing](https://arxiv.org/abs/2004.13922)
 
 
-## 下载
-主要提供TensorFlow 1.x版本的模型下载。
+## Download
+We mainly provide pre-trained MacBERT models in TensorFlow 1.x.
 
 * **`MacBERT-large, Chinese`**: 24-layer, 1024-hidden, 16-heads, 324M parameters   
 * **`MacBERT-base, Chinese`**：12-layer, 768-hidden, 12-heads, 102M parameters   
 
-| 模型                                |                         Google Drive                         |                        百度盘                        | 大小 |
+| Model                                |                         Google Drive                         |                        Baidu Disk                        | Size |
 | :----------------------------------- | :----------------------------------------------------------: | :----------------------------------------------------------: | :--: |
 | **`MacBERT-large, Chinese`**    | [TensorFlow](https://drive.google.com/file/d/1lWYxnk1EqTA2Q20_IShxBrCPc5VSDCkT/view?usp=sharing) | [TensorFlow（pw:zejf）](https://pan.baidu.com/s/1nJEjhUAnWGO_1RPki21mxA?pwd=zejf) | 1.2G |
 | **`MacBERT-base, Chinese`**     | [TensorFlow](https://drive.google.com/file/d/1aV69OhYzIwj_hn-kO1RiBa-m8QAusQ5b/view?usp=sharing) | [TensorFlow（pw:61ga）](https://pan.baidu.com/s/1EAs2fmraqtvfia5Q5rXnuQ?pwd=61ga) | 383M |
 
-### PyTorch/TensorFlow2 版本
+### PyTorch/TensorFlow2 Version
 
-如果需要PyTorch或者TensorFlow2版本的模型：
+If you need these models in PyTorch/TensorFlow2,
 
-1. 使用  [🤗Transformers](https://github.com/huggingface/transformers) 自行转换
-2. 或者从 https://huggingface.co/hfl 下载
+1) Convert TensorFlow checkpoint into PyTorch/TensorFlow2, using [🤗Transformers](https://github.com/huggingface/transformers)
 
-下载步骤（也可以直接用git将整个目录克隆下来）：
+2) Download from https://huggingface.co/hfl
 
-1. 进入https://huggingface.co/hfl 之后选择某个MacBERT模型，例如MacBERT-base：https://huggingface.co/hfl/chinese-macbert-base
-2. 选择"files and versions"选项卡
-3. 点击需要下载的bin/json等文件
+Steps: select one of the model in the page above → click "list all files in model" at the end of the model page → download bin/json files from the pop-up window.
 
 
-## 快速加载
-通过  [🤗Transformers](https://github.com/huggingface/transformers)  可以快速加载MacBERT模型。
-
+## Quick Load
+With [Huggingface-Transformers](https://github.com/huggingface/transformers), the models above could be easily accessed and loaded through the following codes.
 ```
 tokenizer = BertTokenizer.from_pretrained("MODEL_NAME")
 model = BertModel.from_pretrained("MODEL_NAME")
 ```
-**注意：请使用BertTokenizer和BertModel来加载MacBERT模型！**
+**Notice: Please use BertTokenizer and BertModel for loading MacBERT models.  **
 
-对应的`MODEL_NAME` 如下所示：
+The actual model and its `MODEL_NAME` are listed below.
 
-| 原模型        | 模型调用名                |
-| ------------- | ------------------------- |
-| MacBERT-large | hfl/chinese-macbert-large |
-| MacBERT-base  | hfl/chinese-macbert-base  |
+| Original Model | MODEL_NAME                |
+| -------------- | ------------------------- |
+| MacBERT-large  | hfl/chinese-macbert-large |
+| MacBERT-base   | hfl/chinese-macbert-base  |
 
-## 基线效果
-这里展示MacBERT在6个下游任务上的效果（更多结果请参考论文）：
+## Results
+We present the results of MacBERT on the following six tasks (please read our paper for other results).
+- [**CMRC 2018 (Cui et al., 2019)**：Span-Extraction Machine Reading Comprehension (Simplified Chinese)](https://github.com/ymcui/cmrc2018)
+- [**DRCD (Shao et al., 2018)**：Span-Extraction Machine Reading Comprehension (Traditional Chinese)](https://github.com/DRCSolutionService/DRCD)
+- [**XNLI (Conneau et al., 2018)**：Natural Langauge Inference](https://github.com/google-research/bert/blob/master/multilingual.md)
+- [**ChnSentiCorp**：Sentiment Analysis](https://github.com/pengming617/bert_classification)
+- [**LCQMC (Liu et al., 2018)**：Sentence Pair Matching](http://icrc.hitsz.edu.cn/info/1037/1146.htm)
+- [**BQ Corpus (Chen et al., 2018)**：Sentence Pair Matching](http://icrc.hitsz.edu.cn/Article/show/175.html)
 
-- [**CMRC 2018 (Cui et al., 2019)**：抽取式阅读理解（简体中文）](https://github.com/ymcui/cmrc2018)
-- [**DRCD (Shao et al., 2018)**：抽取式阅读理解（繁体中文）](https://github.com/DRCSolutionService/DRCD)
-- [**XNLI (Conneau et al., 2018)**：自然语言推断](https://github.com/google-research/bert/blob/master/multilingual.md)
-- [**ChnSentiCorp**：情感分类](https://github.com/pengming617/bert_classification)
-- [**LCQMC (Liu et al., 2018)**：句对匹配](http://icrc.hitsz.edu.cn/info/1037/1146.htm)
-- [**BQ Corpus (Chen et al., 2018)**：句对匹配](http://icrc.hitsz.edu.cn/Article/show/175.html)
-
-为了保证结果的稳定性，我们同时给出独立运行10次的平均值（括号内）和最大值。
+To ensure the stability of the results, we run 10 times for each experiment and report the maximum and average scores (in brackets).
 
 ### CMRC 2018
-[**CMRC 2018数据集**](https://github.com/ymcui/cmrc2018)是哈工大讯飞联合实验室发布的中文机器阅读理解数据。
-根据给定问题，系统需要从篇章中抽取出片段作为答案，形式与SQuAD相同。
-评测指标为：EM / F1
+[CMRC 2018 dataset](https://github.com/ymcui/cmrc2018) is released by the Joint Laboratory of HIT and iFLYTEK Research. The model should answer the questions based on the given passage, which is identical to [SQuAD](http://arxiv.org/abs/1606.05250). Evaluation metrics: EM / F1
 
 | Model                     |        Development        |           Test            |         Challenge         | #Params |
 | :------------------------ | :-----------------------: | :-----------------------: | :-----------------------: | :-----: |
@@ -140,9 +138,7 @@ model = BertModel.from_pretrained("MODEL_NAME")
 
 
 ### DRCD
-[**DRCD数据集**](https://github.com/DRCKnowledgeTeam/DRCD)由中国台湾台达研究院发布，其形式与SQuAD相同，是基于繁体中文的抽取式阅读理解数据集。
-**由于ERNIE中去除了繁体中文字符，故不建议在繁体中文数据上使用ERNIE（或转换成简体中文后再处理）。**
-评测指标为：EM / F1
+[DRCD](https://github.com/DRCKnowledgeTeam/DRCD) is also a span-extraction machine reading comprehension dataset, released by Delta Research Center. The text is written in Traditional Chinese. Evaluation metrics: EM / F1
 
 | Model                     |        Development        |           Test            | #Params |
 | :------------------------ | :-----------------------: | :-----------------------: | :-----: |
@@ -158,8 +154,7 @@ model = BertModel.from_pretrained("MODEL_NAME")
 
 
 ### XNLI
-在自然语言推断任务中，我们采用了[**XNLI**数据](https://github.com/google-research/bert/blob/master/multilingual.md)，需要将文本分成三个类别：`entailment`，`neutral`，`contradictory`。
-评测指标为：Accuracy
+We use [XNLI](https://github.com/google-research/bert/blob/master/multilingual.md) data for testing the NLI task. Evaluation metrics: Accuracy
 
 | Model                     | Development |    Test     | #Params |
 | :------------------------ | :---------: | :---------: | :-----: |
@@ -175,8 +170,7 @@ model = BertModel.from_pretrained("MODEL_NAME")
 
 
 ### ChnSentiCorp
-在情感分析任务中，二分类的情感分类数据集ChnSentiCorp。
-评测指标为：Accuracy
+We use [ChnSentiCorp](https://github.com/pengming617/bert_classification) data for testing sentiment analysis. Evaluation metrics: Accuracy
 
 | Model                     | Development |    Test     | #Params |
 | :------------------------ | :---------: | :---------: | :-----: |
@@ -192,8 +186,7 @@ model = BertModel.from_pretrained("MODEL_NAME")
 
 
 ### LCQMC
-[LCQMC](http://icrc.hitsz.edu.cn/info/1037/1146.htm)由哈工大深圳研究生院智能计算研究中心发布。 
-评测指标为：Accuracy
+[**LCQMC**](http://icrc.hitsz.edu.cn/info/1037/1146.htm) is a sentence pair matching dataset, which could be seen as a binary classification task. Evaluation metrics: Accuracy
 
 | Model                     | Development |    Test     | #Params |
 | :------------------------ | :---------: | :---------: | :-----: |
@@ -208,8 +201,7 @@ model = BertModel.from_pretrained("MODEL_NAME")
 | **MacBERT-large** | 90.6 (90.3) | 87.6 (87.1) | 324M |
 
 ### BQ Corpus 
-[BQ Corpus](http://icrc.hitsz.edu.cn/Article/show/175.html)由哈工大深圳研究生院智能计算研究中心发布，是面向银行领域的数据集。
-评测指标为：Accuracy
+[**BQ Corpus**](http://icrc.hitsz.edu.cn/Article/show/175.html) is a sentence pair matching dataset, which could be seen as a binary classification task. Evaluation metrics: Accuracy
 
 | Model                     | Development |    Test     | #Params |
 | :------------------------ | :---------: | :---------: | :-----: |
@@ -224,29 +216,28 @@ model = BertModel.from_pretrained("MODEL_NAME")
 | **MacBERT-large** | 86.2 (85.7) | 85.6 (85.0) | 324M |
 
 ## FAQ
-**Q1: 有英文版的MacBERT吗？**
+**Question 1: Do you have an English version of MacBERT?**
 
-A1: 目前没有。
+A1: Sorry, we do not have English version of pre-trained MacBERT. 
 
-**Q2: 如何使用MacBERT？**
+**Question 2: How to use MacBERT?**
 
-A2: 和使用BERT一样，只需要简单替换模型文件和config就能使用了。当然，你也可以通过加载我们的模型（即初始化transformers部分）来进一步训练其他预训练模型。
+A2: Use it as if you are using original BERT in the fine-tuning stage (just replace the checkpoint and config files). Also, you can perform further pre-training on our checkpoint with MLM/NSP/SOP objectives. 
 
-**Q3: 能提供MacBERT的训练代码吗？**
+**Question 3: Could you provide pre-training code for MacBERT?**
 
-A3: 暂无开源计划。
+A3: Sorry, we cannot provide source code at the moment, and maybe we'll release them in the future, but there is no guarantee.
 
-**Q4: 能开源预训练的语料吗？**
+**Question 4: How about releasing the pre-training data?**
 
-A4: 我们无法开源训练语料，因为没有相应重发布的权利。GitHub上有一些开源中文语料资源，可以多加关注利用。
+A4: We have no right to redistribute these data, which will have potential legal violations.
 
-**Q5: 有计划在更大的语料上训练MacBERT并开源吗？**
+**Question 5: Will you release pre-trained MacBERT on a larger data?**
 
-A5: 我们暂时没有计划。
+A5: Currently, we have no plans on this.
 
-## 引用
-如果本项目中的资源对您的研究有帮助，请引用以下论文。
-
+## Citation
+If you find our resource or paper is useful, please consider including the following citation in your paper.
 ```
 @inproceedings{cui-etal-2020-revisiting,
     title = "Revisiting Pre-Trained Models for {C}hinese Natural Language Processing",
@@ -266,7 +257,7 @@ A5: 我们暂时没有计划。
 }
 ```
 
-或者：
+Or:
 ```
 @journal{cui-etal-2021-pretrain,
   title={Pre-Training with Whole Word Masking for Chinese BERT},
@@ -278,15 +269,14 @@ A5: 我们暂时没有计划。
  }
 ```
 
-## 致谢
-感谢Google [TPU Research Cloud (TFRC)](https://www.tensorflow.org/tfrc)提供计算资源支持。
+## Acknowledgment
+The first author would like to thank [Google TensorFlow Research Cloud (TFRC) Program](https://www.tensorflow.org/tfrc).
 
+## Issues
+Before you submit an issue:
 
+- **You are advised to read [FAQ](#FAQ) first before you submit an issue.** 
+- Repetitive and irrelevant issues will be ignored and closed by [stable-bot](stale · GitHub Marketplace). Thank you for your understanding and support.
+- We cannot acommodate EVERY request, and thus please bare in mind that there is no guarantee that your request will be met.
+- Always be polite when you submit an issue.
 
-## 问题反馈
-如有问题，请在GitHub Issue中提交。
-
-- 在提交问题之前，请先查看FAQ能否解决问题，同时建议查阅以往的issue是否能解决你的问题。
-- 重复以及与本项目无关的issue会被[stable-bot](stale · GitHub Marketplace)处理，敬请谅解。
-- 我们会尽可能的解答你的问题，但无法保证你的问题一定会被解答。
-- 礼貌地提出问题，构建和谐的讨论社区。
