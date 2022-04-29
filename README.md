@@ -10,7 +10,7 @@
         <img alt="GitHub" src="https://img.shields.io/github/license/ymcui/MacBERT.svg?color=blue&style=flat-square">
     </a>
 </p>
-本目录包含论文**"Revisiting Pre-trained Models for Chinese Natural Language Processing"**（发表于[Findings of EMNLP 2020](https://2020.emnlp.org)）相关资源，即**MacBERT预训练模型**。
+本目录包含**MacBERT预训练模型**，该模型引入了一种纠错型掩码语言模型（Mac）预训练任务，缓解了“预训练-下游任务”不一致的问题。MacBERT在多种NLP任务上取得了显著性能提升。
 
 
 - **[Revisiting Pre-trained Models for Chinese Natural Language Processing](https://www.aclweb.org/anthology/2020.findings-emnlp.58)**  
