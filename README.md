@@ -24,7 +24,9 @@
 更多HFL发布的资源：https://github.com/ymcui/HFL-Anthology
 
 ## News
-**2022/3/30 发布了新的预训练模型PERT：https://github.com/ymcui/PERT** 
+**2023/3/28 开源了中文LLaMA&Alpaca大模型，可快速在PC上部署体验，查看：https://github.com/ymcui/Chinese-LLaMA-Alpaca**
+
+2022/3/30 发布了新的预训练模型PERT：https://github.com/ymcui/PERT
 
 2021/12/17 发布了模型裁剪工具TextPruner：https://github.com/airaria/TextPruner
 

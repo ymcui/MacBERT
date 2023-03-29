@@ -24,7 +24,9 @@ This repository contains the new pre-trained language model, **MacBERT**.
 More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 ## News
-**[Mar 30, 2022] We release a new pre-trained model called PERT, check https://github.com/ymcui/PERT**
+**[Mar 28, 2023] We open-sourced Chinese LLaMA&Alpaca LLMs, which can be quickly deployed on PC. Check: https://github.com/ymcui/Chinese-LLaMA-Alpaca**
+
+[Mar 30, 2022] We release a new pre-trained model called PERT, check https://github.com/ymcui/PERT
 
 [Dec 17, 2021] We release a model pruning toolkit - TextPruner, check https://github.com/airaria/TextPruner
 
