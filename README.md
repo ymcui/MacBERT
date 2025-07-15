@@ -71,28 +71,13 @@
 
 
 ## 下载
-主要提供TensorFlow 1.x版本的模型下载。
-
 * **`MacBERT-large, Chinese`**: 24-layer, 1024-hidden, 16-heads, 324M parameters   
 * **`MacBERT-base, Chinese`**：12-layer, 768-hidden, 12-heads, 102M parameters   
 
-| 模型                                |                         Google Drive                         |                        百度盘                        | 大小 |
+| 模型                                |                         🤗HF                         |                        百度盘                        | 大小 |
 | :----------------------------------- | :----------------------------------------------------------: | :----------------------------------------------------------: | :--: |
-| **`MacBERT-large, Chinese`**    | [TensorFlow](https://drive.google.com/file/d/1lWYxnk1EqTA2Q20_IShxBrCPc5VSDCkT/view?usp=sharing) | [TensorFlow（pw:zejf）](https://pan.baidu.com/s/1nJEjhUAnWGO_1RPki21mxA?pwd=zejf) | 1.2G |
-| **`MacBERT-base, Chinese`**     | [TensorFlow](https://drive.google.com/file/d/1aV69OhYzIwj_hn-kO1RiBa-m8QAusQ5b/view?usp=sharing) | [TensorFlow（pw:61ga）](https://pan.baidu.com/s/1EAs2fmraqtvfia5Q5rXnuQ?pwd=61ga) | 383M |
-
-### PyTorch/TensorFlow2 版本
-
-如果需要PyTorch或者TensorFlow2版本的模型：
-
-1. 使用  [🤗Transformers](https://github.com/huggingface/transformers) 自行转换
-2. 或者从 https://huggingface.co/hfl 下载
-
-下载步骤（也可以直接用git将整个目录克隆下来）：
-
-1. 进入https://huggingface.co/hfl 之后选择某个MacBERT模型，例如MacBERT-base：https://huggingface.co/hfl/chinese-macbert-base
-2. 选择"files and versions"选项卡
-3. 点击需要下载的bin/json等文件
+| **`MacBERT-large, Chinese`**    | [HF link](https://huggingface.co/hfl/chinese-macbert-large) | [TensorFlow（pw:zejf）](https://pan.baidu.com/s/1nJEjhUAnWGO_1RPki21mxA?pwd=zejf) | 1.2G |
+| **`MacBERT-base, Chinese`**     | [HF link](https://huggingface.co/hfl/chinese-macbert-base) | [TensorFlow（pw:61ga）](https://pan.baidu.com/s/1EAs2fmraqtvfia5Q5rXnuQ?pwd=61ga) | 383M |
 
 
 ## 快速加载

@@ -76,25 +76,13 @@ For more technical details, please check our paper: [Revisiting Pre-trained Mode
 
 
 ## Download
-We mainly provide pre-trained MacBERT models in TensorFlow 1.x.
-
 * **`MacBERT-large, Chinese`**: 24-layer, 1024-hidden, 16-heads, 324M parameters   
 * **`MacBERT-base, Chinese`**：12-layer, 768-hidden, 12-heads, 102M parameters   
 
-| Model                                |                         Google Drive                         |                        Baidu Disk                        | Size |
+| Model                                |                         🤗HF                         |                        Baidu Disk                        | Size |
 | :----------------------------------- | :----------------------------------------------------------: | :----------------------------------------------------------: | :--: |
-| **`MacBERT-large, Chinese`**    | [TensorFlow](https://drive.google.com/file/d/1lWYxnk1EqTA2Q20_IShxBrCPc5VSDCkT/view?usp=sharing) | [TensorFlow（pw:zejf）](https://pan.baidu.com/s/1nJEjhUAnWGO_1RPki21mxA?pwd=zejf) | 1.2G |
-| **`MacBERT-base, Chinese`**     | [TensorFlow](https://drive.google.com/file/d/1aV69OhYzIwj_hn-kO1RiBa-m8QAusQ5b/view?usp=sharing) | [TensorFlow（pw:61ga）](https://pan.baidu.com/s/1EAs2fmraqtvfia5Q5rXnuQ?pwd=61ga) | 383M |
-
-### PyTorch/TensorFlow2 Version
-
-If you need these models in PyTorch/TensorFlow2,
-
-1) Convert TensorFlow checkpoint into PyTorch/TensorFlow2, using [🤗Transformers](https://github.com/huggingface/transformers)
-
-2) Download from https://huggingface.co/hfl
-
-Steps: select one of the model in the page above → click "list all files in model" at the end of the model page → download bin/json files from the pop-up window.
+| **`MacBERT-large, Chinese`**    | [HF link](https://huggingface.co/hfl/chinese-macbert-large) | [TensorFlow（pw:zejf）](https://pan.baidu.com/s/1nJEjhUAnWGO_1RPki21mxA?pwd=zejf) | 1.2G |
+| **`MacBERT-base, Chinese`**     | [HF link](https://huggingface.co/hfl/chinese-macbert-base) | [TensorFlow（pw:61ga）](https://pan.baidu.com/s/1EAs2fmraqtvfia5Q5rXnuQ?pwd=61ga) | 383M |
 
 
 ## Quick Load
