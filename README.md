@@ -268,8 +268,6 @@ A5: 我们暂时没有计划。
 ## 致谢
 感谢Google [TPU Research Cloud (TFRC)](https://www.tensorflow.org/tfrc)提供计算资源支持。
 
-
-
 ## 问题反馈
 如有问题，请在GitHub Issue中提交。
 
@@ -277,3 +275,8 @@ A5: 我们暂时没有计划。
 - 重复以及与本项目无关的issue会被[stable-bot](stale · GitHub Marketplace)处理，敬请谅解。
 - 我们会尽可能的解答你的问题，但无法保证你的问题一定会被解答。
 - 礼貌地提出问题，构建和谐的讨论社区。
+
+## 关注我们
+欢迎关注微信公众号"**涌现志**"，了解最新的技术动态。
+
+![qrcode.png](https://ymcui.com/images/qrcode.jpg)
